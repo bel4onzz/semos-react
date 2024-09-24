@@ -11,6 +11,6 @@
 3. Style Your Components:
    - Apply some basic styling to the components using CSS.
 
-Bonus Challenge:
+**Bonus Challenge:**
 
 - Make the components responsive
