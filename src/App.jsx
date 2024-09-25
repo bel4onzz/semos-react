@@ -1,30 +1,34 @@
-import Button from "./components/button/button"
-import MyClassComponent from "./components/classComponent/myClassComponent"
-import { Greeting, Paragraph } from "./components/greeting/greeting"
+// import NewClassComponent from "./examples/lecture_2/components/NewClassComponent"
+// import SimpleCounterComponent from "./examples/lecture_2/components/SimpleCounterComponent"
+import { Component } from "react"
+import Timer from "./examples/lecture_2/components/timer"
 
-function App() {
-  console.log("render")
-  const titleElement = <h2>This is title</h2>
-
-  const titleStyle = {
-    color: "red",
-    fontSize: "60px",
-    marginBottom: "50px",
+class App extends Component {
+  constructor() {
+    super()
+    this.state = {
+      showTimer: true,
+    }
+    this.toggleTimer = this.toggleTimer.bind(this)
   }
 
-  return (
-    <div style={{}}>
-      <div>
-        <h1 style={titleStyle}>Hello, world!</h1>
-        <p>Welcome to the React 18 app!</p>
-      </div>
-      {titleElement}
-      <Greeting />
-      <Paragraph />
-      <MyClassComponent />
-      <Button />
-    </div>
-  )
+  toggleTimer() {
+    this.setState((prevState) => ({
+      showTimer: !prevState.showTimer,
+    }))
+  }
+
+  render() {
+    console.log(this.state.showTimer)
+    return (
+      <>
+        {/* <NewClassComponent /> */}
+        {/* <SimpleCounterComponent /> */}
+        {this.state.showTimer ? <Timer /> : null}
+        <button onClick={this.toggleTimer}>Show/Hide Timer</button>
+      </>
+    )
+  }
 }
 
 export default App
