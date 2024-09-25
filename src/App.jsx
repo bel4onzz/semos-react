@@ -6,6 +6,26 @@ import ProfileCard from "./examples/lecture_2/components/profileCard"
 
 let randomArr = [1, 3, 4, 7, 12, 8, 10, 93]
 let person = { name: "John", address: "St 30." }
+let profiles = [
+  {
+    imgUrl:
+      "https://easy-peasy.ai/cdn-cgi/image/quality=80,format=auto,width=700/https://fdczvxmwwjwpwbeeqcth.supabase.co/storage/v1/object/public/images/50dab922-5d48-4c6b-8725-7fd0755d9334/3a3f2d35-8167-4708-9ef0-bdaa980989f9.png",
+    name: "John",
+    address: "random address",
+  },
+  {
+    imgUrl:
+      "https://img.freepik.com/free-photo/portrait-man-laughing_23-2148859448.jpg?size=338&ext=jpg&ga=GA1.1.2008272138.1727222400&semt=ais_hybrid",
+    name: "Peter",
+    address: "random address 2",
+  },
+  {
+    imgUrl:
+      "https://www.perfocal.com/blog/content/images/2021/01/Perfocal_17-11-2019_TYWFAQ_100_standard-3.jpg",
+    name: "Mia",
+    address: "random address 3",
+  },
+]
 class App extends Component {
   constructor() {
     super()
@@ -50,6 +70,17 @@ class App extends Component {
           name="Mia"
           address="random address 3"
         />
+        {/* map through an array  */}
+        {/* {profiles.map((profile) => {
+            return (
+              <ProfileCard
+                key={profile.name}
+                imgUrl={profile.imgUrl}
+                name={profile.name}
+                address={profile.address}
+              />
+            )
+        })} */}
       </>
     )
   }
